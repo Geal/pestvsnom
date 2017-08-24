@@ -12,7 +12,7 @@ use pest_grammars::json;
 const CANADA : &str = include_str!("../assets/canada.json");
 
 #[bench]
-fn pest_json(b: &mut Bencher) {
+fn pest(b: &mut Bencher) {
   b.iter(||{
     json::JsonParser::parse_str(json::Rule::json, CANADA).unwrap_or_else(|e| panic!("{}", e))
   });

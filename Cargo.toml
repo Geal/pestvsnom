@@ -3,6 +3,12 @@ name = "pestvsnom"
 version = "0.1.0"
 authors = ["Geoffroy Couprie <geo.couprie@gmail.com>"]
 
+[dependencies]
+libc = "^0.2"
+
+[build-dependencies]
+gcc = "^0.3"
+
 [dev-dependencies]
 pest = "^1.0.0-beta"
 pest_grammars = "^1.0.0-beta"

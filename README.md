@@ -14,7 +14,7 @@ All the files are in `benches/`:
 ```
 $ cargo bench
    Compiling pestvsnom v0.1.0 (file:///Users/geal/dev/rust/projects/pestvsnom)
-    Finished release [optimized] target(s) in 3.73 secs
+    Finished release [optimized] target(s) in 7.57 secs
      Running target/release/deps/pestvsnom-97707cfcfc27f95f
 
 running 0 tests
@@ -24,28 +24,35 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
      Running target/release/deps/full_pest-d19d1d9a2d0599f4
 
 running 1 test
-test full_pest ... bench:  85,736,045 ns/iter (+/- 6,323,669)
+test full_pest ... bench:  82,444,592 ns/iter (+/- 11,316,792)
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 1 measured; 0 filtered out
 
      Running target/release/deps/nom-8768745f161d04c9
 
 running 1 test
-test nom_f32 ... bench: 299,732,664 ns/iter (+/- 10,568,900)
+test nom_f32 ... bench: 296,648,189 ns/iter (+/- 22,709,297)
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 1 measured; 0 filtered out
 
      Running target/release/deps/nom_f64-1730d2858dff8973
 
 running 1 test
-test nom_f64 ... bench:  63,901,183 ns/iter (+/- 3,180,677)
+test nom_f64 ... bench:  63,573,729 ns/iter (+/- 17,063,945)
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 1 measured; 0 filtered out
 
      Running target/release/deps/pest-46b9649508cd945f
 
 running 1 test
-test pest ... bench:  37,862,233 ns/iter (+/- 2,293,381)
+test pest ... bench:  38,894,560 ns/iter (+/- 14,268,167)
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 1 measured; 0 filtered out
+
+     Running target/release/deps/ujson4c-8a2da84cc6e075c6
+
+running 1 test
+test ujson4c ... bench:  10,099,504 ns/iter (+/- 7,062,072)
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 1 measured; 0 filtered out
 ```

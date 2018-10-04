@@ -15,7 +15,7 @@ use std::collections::HashMap;
 #[derive(Debug,PartialEq)]
 pub enum JsonValue {
   Str(String),
-  Num(f32),
+  Num(f64),
   Array(Vec<JsonValue>),
   Object(HashMap<String,JsonValue>)
 }
@@ -24,7 +24,7 @@ pub enum JsonValue {
 // we know it is correct UTF-8. no need to use from_utf8 to
 // verify it is correct
 // FIXME: use alt_complete (implement ws for alt_complete)
-named!(unsigned_float <f32>, map_res!(
+named!(unsigned_float <f64>, map_res!(
   map_res!(
     recognize!(
       alt_complete!(
@@ -37,13 +37,13 @@ named!(unsigned_float <f32>, map_res!(
   ),
   FromStr::from_str
 ));
-named!(float<f32>, map!(
+named!(float<f64>, map!(
   pair!(
     opt!(alt!(tag!("+") | tag!("-"))),
     unsigned_float
   ),
-  |(sign, value): (Option<&[u8]>, f32)| {
-    sign.and_then(|s| if s[0] == ('-' as u8) { Some(-1f32) } else { None }).unwrap_or(1f32) * value
+  |(sign, value): (Option<&[u8]>, f64)| {
+    sign.and_then(|s| if s[0] == ('-' as u8) { Some(-1f64) } else { None }).unwrap_or(1f64) * value
   }
 ));
 
@@ -110,7 +110,7 @@ const CANADA : &[u8] = include_bytes!("../assets/canada.json");
 const DATA   : &[u8] = include_bytes!("../assets/data.json");
 
 #[bench]
-fn canada(b: &mut Bencher) {
+fn nom_canada(b: &mut Bencher) {
   //println!("data:\n{:?}", value(&CANADA[..]));
   b.iter(||{
     value(&CANADA[..])
@@ -118,7 +118,7 @@ fn canada(b: &mut Bencher) {
 }
 
 #[bench]
-fn data(b: &mut Bencher) {
+fn nom_data(b: &mut Bencher) {
   //println!("data:\n{:?}", value(&CANADA[..]));
   b.iter(||{
     value(&DATA[..])

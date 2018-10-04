@@ -102,6 +102,17 @@ const CANADA : &[u8] = include_bytes!("../assets/canada.json");
 const DATA   : &[u8] = include_bytes!("../assets/data.json");
 const REDUCED   : &[u8] = include_bytes!("../assets/reduced.json");
 
+#[test]
+fn nom_data_test() {
+  println!("data:\n{:?}", root(&DATA[..]).unwrap());
+}
+
+#[test]
+fn nom_canada_test() {
+  println!("canada:\n{:?}", root(&CANADA[..]).unwrap());
+}
+
+/*
 #[bench]
 fn nom_canada(b: &mut Bencher) {
   //println!("data:\n{:?}", value(&CANADA[..]));
@@ -117,3 +128,4 @@ fn nom_data(b: &mut Bencher) {
     root(&DATA[..]).unwrap()
   });
 }
+*/

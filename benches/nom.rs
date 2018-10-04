@@ -107,12 +107,21 @@ named!(value<JsonValue>,
 );
 
 const CANADA : &[u8] = include_bytes!("../assets/canada.json");
+const DATA   : &[u8] = include_bytes!("../assets/data.json");
 
 #[bench]
-fn nom_f32(b: &mut Bencher) {
+fn canada(b: &mut Bencher) {
   //println!("data:\n{:?}", value(&CANADA[..]));
   b.iter(||{
     value(&CANADA[..])
+  });
+}
+
+#[bench]
+fn data(b: &mut Bencher) {
+  //println!("data:\n{:?}", value(&CANADA[..]));
+  b.iter(||{
+    value(&DATA[..])
   });
 }
 

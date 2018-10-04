@@ -15,6 +15,7 @@ use std::collections::HashMap;
 
 use test::Bencher;
 
+/*
 use pest::inputs::{Input, Span};
 use pest::iterators::Pair;
 use pest::Parser;
@@ -79,3 +80,4 @@ fn full_pest(b: &mut Bencher) {
         consume(JsonParser::parse_str(Rule::json, CANADA).unwrap().next().unwrap())
     });
 }
+*/

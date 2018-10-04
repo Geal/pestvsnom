@@ -10,6 +10,6 @@ libc = "^0.2"
 gcc = "^0.3"
 
 [dev-dependencies]
-pest = "^1.0.0-beta"
-pest_grammars = "^1.0.0-beta"
-nom = "^3.2"
+pest = "^2"
+pest_grammars = "^2"
+nom = "^4"

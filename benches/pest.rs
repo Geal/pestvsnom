@@ -14,12 +14,12 @@ const DATA : &str = include_str!("../assets/data.json");
 
 
 #[bench]
-fn pest_canada(b: &mut Bencher) {
+fn pest_canada_shallow(b: &mut Bencher) {
   b.iter(|| JsonParser::parse(Rule::json, CANADA).unwrap());
 }
 
 #[bench]
-fn pest_data(b: &mut Bencher) {
+fn pest_data_shallow(b: &mut Bencher) {
   b.iter(|| JsonParser::parse(Rule::json, DATA).unwrap());
 }
 

@@ -12,6 +12,8 @@ gcc = "^0.3"
 
 [dev-dependencies]
 pest = "^2"
+faster-pest = { path="../pest-based-parser/faster-pest" }
+faster-pest-derive = { path="../pest-based-parser/faster-pest-derive" }
 pest_grammars = "^2"
 nom = "^7"
 old_nom = { version="^4", package = "nom" }

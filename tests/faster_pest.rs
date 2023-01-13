@@ -1,8 +1,3 @@
-#![feature(test)]
-
-extern crate test;
-
-use test::Bencher;
 use faster_pest::*;
 use std::borrow::Cow;
 use std::collections::HashMap;
@@ -78,39 +73,22 @@ fn json_text_to_string(s: &str) -> Cow<str> {
     Cow::Borrowed(s)
 }
 
-const CANADA : &str = include_str!("../assets/canada.json");
-const DATA   : &str = include_str!("../assets/data.json");
-
-#[bench]
-fn faster_pest_canada_shallow(b: &mut Bencher) {
-    b.iter(|| {
-        JsonParser::parse_file(CANADA).expect("unsuccessful parse");
-    });
+#[test]
+fn faster_pest_canada_test() {
+    let input = std::fs::read_to_string("assets/canada.json").unwrap();
+    let output = JsonParser::parse_file(&input).map_err(|e| e.print(input.as_str())).unwrap();
+    let file = output.into_iter().next().unwrap();
+    let main_object = file.children().next().unwrap();
+    let output = Value::from_ident_ref(main_object);
+    println!("{:#?}", output);
 }
 
-#[bench]
-fn faster_pest_canada(b: &mut Bencher) {
-    b.iter(|| {
-        let output = JsonParser::parse_file(CANADA).map_err(|e| e.print(CANADA)).unwrap();
-        let file = output.into_iter().next().unwrap();
-        let main_object = file.children().next().unwrap();
-        let output = Value::from_ident_ref(main_object);
-    });
-}
-
-#[bench]
-fn faster_pest_data_shallow(b: &mut Bencher) {
-    b.iter(|| {
-        JsonParser::parse_file(DATA).expect("unsuccessful parse");
-    });
-}
-
-#[bench]
-fn faster_pest_data(b: &mut Bencher) {
-    b.iter(|| {
-        let output = JsonParser::parse_file(DATA).map_err(|e| e.print(DATA)).unwrap();
-        let file = output.into_iter().next().unwrap();
-        let main_object = file.children().next().unwrap();
-        let output = Value::from_ident_ref(main_object);
-    });
+#[test]
+fn faster_pest_data_test() {
+    let input = std::fs::read_to_string("assets/data.json").unwrap();
+    let output = JsonParser::parse_file(&input).map_err(|e| e.print(input.as_str())).unwrap();
+    let file = output.into_iter().next().unwrap();
+    let main_object = file.children().next().unwrap();
+    let output = Value::from_ident_ref(main_object);
+    println!("{:#?}", output);
 }

@@ -1,7 +1,6 @@
 //! This is a copy of nom's json example.
 //! The parse_str function was modified to comply with the json format.
 
-//#![feature(trace_macros)]
 #![feature(test)]
 extern crate test;
 

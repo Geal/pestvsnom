@@ -20,64 +20,64 @@ Benchmarks suffixed `_shallow` recognize the AST without building a Rust data st
 ```
 $ cargo bench
    Compiling pestvsnom v0.1.0 (/home/mubelotix/projects/pestvsnom)
-    Finished bench [optimized] target(s) in 2.99s
-     Running unittests src/lib.rs (target/release/deps/pestvsnom-2d14982312dfc0a6)
+    Finished bench [optimized] target(s) in 3.19s
+     Running unittests src/lib.rs (target/release/deps/pestvsnom-757e2dbb8943e632)
 
 running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
-     Running benches/faster_pest.rs (target/release/deps/faster_pest-eaa3dd6af9f3282d)
+     Running benches/faster_pest.rs (target/release/deps/faster_pest-8d0810fb064854ab)
 
 running 4 tests
-test faster_pest_canada         ... bench:  17,121,097 ns/iter (+/- 2,816,060)
-test faster_pest_canada_shallow ... bench:   4,579,133 ns/iter (+/- 549,509)
-test faster_pest_data           ... bench:      11,712 ns/iter (+/- 4,807)
-test faster_pest_data_shallow   ... bench:       4,519 ns/iter (+/- 2,797)
+test faster_pest_canada         ... bench:  14,991,354 ns/iter (+/- 502,108)
+test faster_pest_canada_shallow ... bench:   4,205,600 ns/iter (+/- 167,251)
+test faster_pest_data           ... bench:      10,283 ns/iter (+/- 295)
+test faster_pest_data_shallow   ... bench:       3,417 ns/iter (+/- 210)
 
-test result: ok. 0 passed; 0 failed; 0 ignored; 4 measured; 0 filtered out; finished in 17.90s
+test result: ok. 0 passed; 0 failed; 0 ignored; 4 measured; 0 filtered out; finished in 8.84s
 
-     Running benches/nom.rs (target/release/deps/nom-d3dfb5d8351a655d)
-
-running 2 tests
-test old_nom_canada ... bench:  24,393,149 ns/iter (+/- 7,242,989)
-test old_nom_data   ... bench:      20,980 ns/iter (+/- 4,954)
-
-test result: ok. 0 passed; 0 failed; 0 ignored; 2 measured; 0 filtered out; finished in 11.61s
-
-     Running benches/nom7.rs (target/release/deps/nom7-bd8cb13cfce73e5d)
+     Running benches/nom.rs (target/release/deps/nom-77e22cfc4fff022c)
 
 running 2 tests
-test nom_canada ... bench:  31,717,873 ns/iter (+/- 5,889,311)
-test nom_data   ... bench:      32,541 ns/iter (+/- 13,311)
+test old_nom_canada ... bench:  20,508,526 ns/iter (+/- 404,666)
+test old_nom_data   ... bench:      17,131 ns/iter (+/- 722)
 
-test result: ok. 0 passed; 0 failed; 0 ignored; 2 measured; 0 filtered out; finished in 14.65s
+test result: ok. 0 passed; 0 failed; 0 ignored; 2 measured; 0 filtered out; finished in 6.42s
 
-     Running benches/pest.rs (target/release/deps/pest-e827b200982d3f5d)
+     Running benches/nom7.rs (target/release/deps/nom7-0e056333b986f195)
+
+running 2 tests
+test nom_canada ... bench:  26,446,832 ns/iter (+/- 518,255)
+test nom_data   ... bench:      21,709 ns/iter (+/- 423)
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 2 measured; 0 filtered out; finished in 8.23s
+
+     Running benches/pest.rs (target/release/deps/pest-0f795f43e6e0c3fb)
 
 running 4 tests
-test pest_canada_collect ... bench:  45,969,109 ns/iter (+/- 18,125,987)
-test pest_canada_shallow ... bench:  37,530,503 ns/iter (+/- 6,918,013)
-test pest_data_collect   ... bench:      34,236 ns/iter (+/- 14,407)
-test pest_data_shallow   ... bench:      24,745 ns/iter (+/- 5,970)
+test pest_canada_collect ... bench:  35,478,226 ns/iter (+/- 640,722)
+test pest_canada_shallow ... bench:  29,646,016 ns/iter (+/- 453,319)
+test pest_data_collect   ... bench:      28,732 ns/iter (+/- 3,105)
+test pest_data_shallow   ... bench:      20,634 ns/iter (+/- 2,239)
 
-test result: ok. 0 passed; 0 failed; 0 ignored; 4 measured; 0 filtered out; finished in 34.08s
+test result: ok. 0 passed; 0 failed; 0 ignored; 4 measured; 0 filtered out; finished in 19.95s
 
      Running benches/serde_json.rs (target/release/deps/serde_json-833ccbe6872c9094)
 
 running 2 tests
-test serde_json_canada ... bench:  16,600,970 ns/iter (+/- 1,852,757)
-test serde_json_data   ... bench:      10,993 ns/iter (+/- 1,271)
+test serde_json_canada ... bench:  14,315,484 ns/iter (+/- 355,358)
+test serde_json_data   ... bench:       9,806 ns/iter (+/- 429)
 
-test result: ok. 0 passed; 0 failed; 0 ignored; 2 measured; 0 filtered out; finished in 10.92s
+test result: ok. 0 passed; 0 failed; 0 ignored; 2 measured; 0 filtered out; finished in 4.66s
 
-     Running benches/ujson4c.rs (target/release/deps/ujson4c-8c134eb35b110d5a)
+     Running benches/ujson4c.rs (target/release/deps/ujson4c-4fc918f0c864dcf6)
 
 running 2 tests
-test ujson4c_canada ... bench:   9,234,080 ns/iter (+/- 2,262,309)
-test ujson4c_data   ... bench:      18,486 ns/iter (+/- 4,262)
+test ujson4c_canada ... bench:   7,749,558 ns/iter (+/- 175,905)
+test ujson4c_data   ... bench:      13,839 ns/iter (+/- 442)
 
-test result: ok. 0 passed; 0 failed; 0 ignored; 2 measured; 0 filtered out; finished in 13.05s
+test result: ok. 0 passed; 0 failed; 0 ignored; 2 measured; 0 filtered out; finished in 8.89s
 ```
 
-From these results (run on a late `Intel® Core™ i7-6700HQ CPU @ 2.60GHz`, with `rustc 1.68.0-nightly (3020239de 2023-01-09)`), we can see that it takes pest as much time to recognize the AST as it takes nom to both recognize it *and* build the data structure. Nom outperforms pest code generated by the official generator. On the other hand, pest code generated by the faster-pest generator beats both pest, nom, and ujson4c on small files. Indeed, it parses the `canada.json` file at 790% the speed of pest and 174% the speed of nom.
+From these results (run on a late `Intel® Core™ i7-6700HQ CPU @ 2.60GHz`, with `rustc 1.68.0-nightly (3020239de 2023-01-09)`), we can see that it takes pest as much time to recognize the AST as it takes nom to both recognize it *and* build the data structure. Nom outperforms pest code generated by the official generator. On the other hand, pest code generated by the faster-pest generator beats both pest, nom, and ujson4c on small files. Indeed, it parses the `canada.json` file at 705% the speed of pest and 136% the speed of nom.

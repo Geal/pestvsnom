@@ -1,14 +1,8 @@
-//#![feature(trace_macros)]
 #![feature(test)]
 extern crate test;
 
-#[macro_use]
-extern crate nom;
-
-use nom::{alphanumeric, recognize_float, sp};
-
+use old_nom::*;
 use test::Bencher;
-
 use std::str;
 use std::collections::HashMap;
 
@@ -89,21 +83,21 @@ named!(
 named!(
   root<JsonValue>,
   delimited!(
-    call!(nom::sp),
+    call!(old_nom::sp),
     alt!(
       map!(hash, JsonValue::Object) |
       map!(array, JsonValue::Array)
     ),
-    not!(complete!(nom::sp))
+    not!(complete!(old_nom::sp))
   )
 );
 
 const CANADA : &[u8] = include_bytes!("../assets/canada.json");
 const DATA   : &[u8] = include_bytes!("../assets/data.json");
-const REDUCED   : &[u8] = include_bytes!("../assets/reduced.json");
+//const REDUCED   : &[u8] = include_bytes!("../assets/reduced.json");
 
 #[bench]
-fn nom_canada(b: &mut Bencher) {
+fn old_nom_canada(b: &mut Bencher) {
   //println!("data:\n{:?}", value(&CANADA[..]));
   b.iter(||{
     root(&CANADA[..]).unwrap()
@@ -111,7 +105,7 @@ fn nom_canada(b: &mut Bencher) {
 }
 
 #[bench]
-fn nom_data(b: &mut Bencher) {
+fn old_nom_data(b: &mut Bencher) {
   //println!("data:\n{:?}", value(&CANADA[..]));
   b.iter(||{
     root(&DATA[..]).unwrap()

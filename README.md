@@ -30,10 +30,10 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
      Running benches/faster_pest.rs (target/release/deps/faster_pest-eaa3dd6af9f3282d)
 
 running 4 tests
-test faster_pest_canada         ... bench:  18,142,626 ns/iter (+/- 3,183,996)
-test faster_pest_canada_shallow ... bench:   4,748,476 ns/iter (+/- 464,822)
-test faster_pest_data           ... bench:      11,958 ns/iter (+/- 1,438)
-test faster_pest_data_shallow   ... bench:       3,723 ns/iter (+/- 749)
+test faster_pest_canada         ... bench:  17,800,885 ns/iter (+/- 3,294,906)
+test faster_pest_canada_shallow ... bench:   4,769,824 ns/iter (+/- 1,097,987)
+test faster_pest_data           ... bench:      11,868 ns/iter (+/- 753)
+test faster_pest_data_shallow   ... bench:       4,025 ns/iter (+/- 431)
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 4 measured; 0 filtered out; finished in 17.90s
 

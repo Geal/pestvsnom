@@ -17,3 +17,4 @@ faster-pest-derive = { path="../pest-based-parser/faster-pest-derive" }
 pest_grammars = "^2"
 nom = "^7"
 old_nom = { version="^4", package = "nom" }
+serde_json = "1.0"

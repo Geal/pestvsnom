@@ -1,6 +1,7 @@
 [package]
 name = "pestvsnom"
 version = "0.1.0"
+edition = "2021"
 authors = ["Geoffroy Couprie <geo.couprie@gmail.com>"]
 
 [dependencies]
@@ -12,4 +13,5 @@ gcc = "^0.3"
 [dev-dependencies]
 pest = "^2"
 pest_grammars = "^2"
-nom = "^4"
+nom = "^7"
+old_nom = { version="^4", package = "nom" }

@@ -100,7 +100,7 @@ named!(
 
 const CANADA : &[u8] = include_bytes!("../assets/canada.json");
 const DATA   : &[u8] = include_bytes!("../assets/data.json");
-const REDUCED   : &[u8] = include_bytes!("../assets/reduced.json");
+//const REDUCED   : &[u8] = include_bytes!("../assets/reduced.json");
 
 #[bench]
 fn nom_canada(b: &mut Bencher) {
